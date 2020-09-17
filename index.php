@@ -173,7 +173,7 @@
                                         </svg></span>
                                 </div>
 
-                                <input class="form-control" id="from_places" placeholder="Enter a location" value="7 Faussett Street, Albert Park VIC, Australia" /> <input
+                                <input class="form-control" id="from_places" placeholder="Enter a location" /> <input
                                     id="origin" name="origin" required="" type="hidden" />
                             </div>
 
@@ -189,7 +189,7 @@
                                         </svg></span>
                                 </div>
 
-                                <input class="form-control" id="to_places" placeholder="Enter a location" value="40 Park St, Saint Kilda West VIC, Australia"/> <input
+                                <input class="form-control" id="to_places" placeholder="Enter a location" /> <input
                                     id="destination" name="destination" required="" type="hidden" />
                             </div>
 
@@ -197,7 +197,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Kgs</span>
                                 </div>
-                                <input type="text" class="form-control" name="kgs" value="4" placeholder="Weight Of the parcel"
+                                <input type="text" class="form-control" name="kgs" placeholder="Weight Of the parcel"
                                     aria-label="Weight Of the parcel">
                                 <div class="input-group-append">
 
@@ -272,7 +272,7 @@
 
 
                         </div>
-                        <input class="btn btn-primary" id="bForm" type="submit" value="Submit" />
+                        <input class="btn btn-primary" id="bForm" type="submit" value="Book Now" />
                         </form>
                        
                     </div>
@@ -309,6 +309,7 @@
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 <?php include 'firebase.php';?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 <script src="booking.js"></script>
 <script src="bfrom.js"></script>
 </body>

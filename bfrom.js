@@ -51,5 +51,25 @@ form.addEventListener("submit", (e) => {
     })
     .then(() => {
       console.log("Booked");
+      let dateNow = new Date();
+      var doc = new jsPDF();
+      let invoice = `\n
+         user mail - ${localStorage.getItem("email")}\n
+         date and time - ${
+           dateNow.getDate() +
+           "/" +
+           (dateNow.getMonth() + 1) +
+           "/" +
+           dateNow.getFullYear()
+         }\n
+         order ID - ${form.Oid.value}\n
+         pickup Location - ${form.origin.value}\n
+         drop Location - ${form.destination.value}\n
+         delivery time - ${time}\n
+         Weight - ${form.kgs.value}\n
+         Total cost - ${price.toFixed(2)}\n
+         DeliveryNotes- ${form.notes.value}\n`;
+      doc.text(invoice, 10, 10);
+      doc.save("a4.pdf");
     });
 });

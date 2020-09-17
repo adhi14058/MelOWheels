@@ -1,9 +1,10 @@
 let km;
 let time;
 let price;
+let bookingTypeGlobal;
 
 let getDetails = () => {
-  return [km, time, price];
+  return [km, time, price, bookingTypeGlobal];
 };
 
 $(function () {
@@ -95,7 +96,7 @@ $(function () {
         DeliveryTime = String(
           document.querySelector("#distance_form").time.value
         );
-
+        bookingTypeGlobal = DeliveryTime + "m";
         ActualFare = (basePrice + distance_in_kilo * InitPriceKm).toFixed(2);
         if (DeliveryTime == "60") {
           ActualFare =
@@ -111,7 +112,17 @@ $(function () {
         }
 
         console.log(DeliveryTime + "v");
-
+        console.log(
+          String(response.destinationAddresses[0].toLowerCase()).includes(
+            "latrobe"
+          )
+        );
+        if (
+          String(response.destinationAddresses[0].toLowerCase()).includes(
+            "latrobe"
+          )
+        )
+          ActualFare = 5.99;
         $("#totalPrice").val("$" + ActualFare);
         price = ActualFare;
         console.log(ActualFare);
